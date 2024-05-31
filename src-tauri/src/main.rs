@@ -5,7 +5,6 @@
 mod board;
 mod agent;
 mod public;
-mod conversion;
 mod commands;
 
 

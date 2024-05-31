@@ -11,6 +11,13 @@ cd src-tauri
 cargo test
 ```
 
+Benchmarks:
+```bash
+cd src-tauri
+cargo bench
+# open target/criterion/report/index.html
+```
+
 Running the app:
 ```bash
 cargo tauri dev
