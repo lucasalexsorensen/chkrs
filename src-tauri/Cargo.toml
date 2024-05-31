@@ -1,0 +1,38 @@
+[package]
+name = "chkrs"
+version = "0.1.0"
+description = "A simple checkers game"
+authors = ["you"]
+license = ""
+repository = ""
+default-run = "chkrs"
+edition = "2021"
+rust-version = "1.60"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1.5.2", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.6.4", features = [] }
+bitvec = "1.0.1"
+ts-rs = "8.1.0"
+fnv = "1.0.7"
+rand = { version = "0.8.5", features = ["small_rng"] }
+itertools = "0.13.0"
+
+[dev-dependencies]
+criterion = { version = "0.4", features = ["html_reports"] }
+
+[features]
+# this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.
+# If you use cargo directly instead of tauri's cli you can use this feature flag to switch between tauri's `dev` and `build` modes.
+# DO NOT REMOVE!!
+custom-protocol = [ "tauri/custom-protocol" ]
+
+[[bench]]
+name = "bitvec"
+harness = false
